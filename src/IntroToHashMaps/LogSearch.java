@@ -1,14 +1,48 @@
 package IntroToHashMaps;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class LogSearch {
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class LogSearch implements ActionListener {
   /* 
 	 * Crate a HashMap of Integers for the keys and Strings for the values.
 	 * Create a GUI with three buttons. 
 	 * Button 1: Add Entry
 	 * 				When this button is clicked, use an input dialog to ask the user to enter an ID number.
 	 * 				After an ID is entered, use another input dialog to ask the user to enter a name.
-	 * 				Add this information as a new entry to your HashMap.
-	 * 
+	 * Add this information as a new entry to your HashMap.
+	 */
+	public static void main(String[] args) {
+		LogSearch log = new LogSearch();
+		log.main();
+	}
+	JFrame frame = new JFrame();
+	JPanel panel = new JPanel();
+	JButton add = new JButton();
+	JButton search = new JButton();
+	JButton view = new JButton();
+	JButton remove = new JButton();
+	 void main() {
+		frame.setVisible(true);
+		frame.add(panel);
+		panel.add(add);
+		panel.add(search);
+		panel.add(view);
+		panel.add(remove);
+		add.setText("Add Entry");
+		search.setText("Search By ID");
+		view.setText("View List");
+		remove.setText("Remove Entry");
+		frame.pack();
+		add.addActionListener(this);
+		search.addActionListener(this);
+		view.addActionListener(this);
+		remove.addActionListener(this);
+	}
+	/* 
 	 * Button 2: Search by ID
 	 * 				When this button is clicked, use an input dialog to ask the user to enter an ID number.
 	 * 				If that ID exists, display that name to the user.
@@ -28,4 +62,9 @@ public class LogSearch {
 	 * 				is not in the list. 
 	 *
 	 * */
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
 }

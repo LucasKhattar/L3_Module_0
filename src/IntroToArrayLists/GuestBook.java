@@ -10,13 +10,14 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class GuestBook implements ActionListener {
-	static String add;
+	 String add;
+	 ArrayList<String> names = new ArrayList<String>();
 	public static void main(String[] args) {
 		GuestBook gbook = new GuestBook();
 		gbook.CreateBook();
-		ArrayList<String> names = new ArrayList<String>();
 		
-		names.add(add);
+		
+		
 	}
 	
 	JButton addName = new JButton();
@@ -33,6 +34,7 @@ public class GuestBook implements ActionListener {
 		viewNames.setText("View Names");
 		frame.pack();
 		addName.addActionListener(this);
+		viewNames.addActionListener(this);
 	}
 	
 	// Create a GUI with two buttons. One button reads "Add Name" and the other button reads "View Names".
@@ -47,9 +49,16 @@ public class GuestBook implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		if (addName.equals(e)) {
-			System.out.println("gfsg");
+		if (addName.equals(e.getSource())) {
 			add	= JOptionPane.showInputDialog(null,"What Name Would You Like To Add To The Guest Book?");
+			names.add(add);
+		}
+		if(viewNames.equals(e.getSource())){
+			for (int i =1; i < names.size(); i++) {
+				String s = names.get(i);
+				System.out.println("Guest Book Names: "+s+" "+i); 
+			}
+			
 		}
 	}
 }
