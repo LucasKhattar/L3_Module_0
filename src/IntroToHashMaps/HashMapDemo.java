@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class HashMapDemo {
 	public static void main(String[] args) {
-		//Creating a HashMap of id's and students
+
 		HashMap<Integer, String> studentRoster = new HashMap<Integer, String>();
 		
 		studentRoster.put(75869, "Danny Ditko");
