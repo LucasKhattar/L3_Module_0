@@ -36,22 +36,5 @@ public class IntroToStack {
 		} else {
 			JOptionPane.showMessageDialog(null, "Error");
 		}
-		// 4. Pop all the elements off of the Stack. Every time a double is popped that
-		// is
-		// between the two numbers entered by the user, print it to the screen.
-
-		// EXAMPLE:
-		// NUM 1: 65
-		// NUM 2: 75
-
-		// Popping elements off stack...
-		// Elements between 65 and 75:
-		// 66.66876846
-		// 74.51651681
-		// 70.05110654
-		// 69.21350456
-		// 71.54506465
-		// 66.47984807
-		// 74.12121224
 	}
 }
