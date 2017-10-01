@@ -67,21 +67,35 @@ public class LogSearch implements ActionListener {
 			int id = Integer.parseInt(is);
 			logs.put(id, name);
 		}
-		if(search.equals(e.getSource())) {
-		in = JOptionPane.showInputDialog(null, "Enter the ID");
-		int iz = Integer.parseInt(is);
-			for(Integer i : logs.keySet()){
-				if(iz==i){
-					System.out.println("gfd");
+		if (search.equals(e.getSource())) {
+			String numbar = JOptionPane.showInputDialog(null, "Input user ID");
+			int nam = Integer.parseInt(numbar);
+			for (Integer j : logs.keySet()) {
+				if (nam == j) {
+					JOptionPane.showMessageDialog(null, "The user is " + logs.get(j));
+				}
+		}
+		}
+				if (view.equals(e.getSource())) {
+					String names = "";
+					System.out.println("pp");
+					for (Integer p : logs.keySet()) {
+						names += "ID: " + p + " Name: " + logs.get(p) + "\n";
+					
+					}
+					JOptionPane.showMessageDialog(null, names);
+				}
+				if (remove.equals(e.getSource())) {
+					String number = JOptionPane.showInputDialog(null, "Input user ID");
+					int num = Integer.parseInt(number);
+					for (Integer i : logs.keySet()) {
+						if (num == i) {
+							JOptionPane.showMessageDialog(null, "You just removed the user " + logs.get(i));
+							logs.remove(i);
+							return;
+						} 
+					}
+					JOptionPane.showMessageDialog(null, "Sorry, the ID number you enterd is invalid");
 				}
 			}
 		}
-		if (view.equals(e.getSource())) {
-			String names = "";
-			for(Integer i : logs.keySet()){
-				names += "ID: "+i+" Name: "+logs.get(i)+"\n";
-			}
-			JOptionPane.showMessageDialog(null, names);
-		}
-	}
-}
